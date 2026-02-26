@@ -1,34 +1,40 @@
-# Team_Name:KuruKuru
-Repository for hackathon at SIT Nagpur  26/2/26 to 27/2/26
+# 🌾 AGRICHAIN — Farm-to-Market Intelligence Platform  
 
-🌾 AGRICHAIN — Farm-to-Market Intelligence Platform
-Team-KuruKuru | Hackathon Project | SIT Nagpur
-👥 Team Members
+## 🏷 Team Name  
+**KuruKuru**
 
-Abhyudaya Aware
+## 📍 Hackathon Details  
+SIT Nagpur  
+26/02/2026 – 27/02/2026  
 
-Aditya Zade
+---
 
-Ketki Thakre
+## 👥 Team Members  
 
-📌 Problem Statement
+1. Abhyudaya Aware  
+2. Aditya Zade  
+3. Ketki Thakre  
 
-India’s farmers lose up to 40% of produce not due to poor farming, but due to poor timing and market mismatch.
+---
 
-The objective is to build an AI-powered system that:
+## 📌 Problem Statement  
 
-Ingests real-time weather patterns
+India’s farmers lose up to **40% of produce** not due to poor farming, but due to poor timing and market mismatch.
 
-Uses soil health indicators
+The objective is to build an **AI-powered decision support system** that:
 
-Analyzes historical mandi price data
+- Ingests real-time weather patterns  
+- Uses soil health indicators  
+- Analyzes historical mandi price data  
+- Recommends optimal harvest windows  
+- Suggests the best target market for a given crop and region  
+- Assesses post-harvest spoilage risk based on storage conditions and transit time  
+- Suggests preservation actions ranked by cost and effectiveness  
 
-Recommends optimal harvest windows
+The solution must be designed for farmers using **basic Android phones**, with a plain language interface and minimal data literacy required.  
 
-Suggests the best target market for a given crop and region
+The system should clearly explain why each recommendation is made, ensuring transparency and building trust.
 
-Assesses post-harvest spoilage risk based on storage conditions and transit time
+---
 
-Suggests preservation actions ranked by cost and effectiveness
-
-The solution must be designed for farmers using basic Android phones, with a plain language interface and minimal data literacy required. The system should also explain why each recommendation is made to build trust.
+*(This README will be updated as development progresses.)*
