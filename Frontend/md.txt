@@ -1,0 +1,7 @@
+We are building a web app for farmers. WHere we have features of optimal havest winsow and market price prediction,. 
+THis will be a very simple web app which a farmer can use easily
+It will have 3 navigation tabs where first one is home page where the features optimal harvest window and the price prediction will be there,
+In the second tab there will be a social media specifically for the farmers where it can post in text and images
+In the third tab there will be a profile page
+the landing page should include farmer ame, farmer id, mobile no, and district
+the harvesting and price predict will have a button on clicking it it will give the prediction

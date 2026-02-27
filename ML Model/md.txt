@@ -1,0 +1,2 @@
+these are the ml models to be implementd in this project ..there aer two files harvest and 2nd one for the price prediction
+these are to be integrated with the frontend and the backend

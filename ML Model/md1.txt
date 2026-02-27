@@ -1,0 +1,3 @@
+I have uploaded the spoilage model , we have implement this model also in our project same as othe ml Models
+It is giving output of mandi marke as ell as of spoilage prediction...we only want poilage prediction so do according to that
+manage UI accordingly

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KisanSmart — Farmer's Smart Assistant</title>
+    <meta name="description" content="Predict optimal harvest time and best market prices for your crops. Built for Indian farmers.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ============================================================ -->
+    <!-- AUTH SCREEN                                                   -->
+    <!-- ============================================================ -->
+    <div id="auth-screen" class="screen active">
+        <div class="auth-container">
+
+            <!-- Language Switcher (on auth screen) -->
+            <div class="lang-switcher" id="auth-lang-switcher">
+                <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+                <button class="lang-btn" data-lang="hi" onclick="setLanguage('hi')">हिं</button>
+                <button class="lang-btn" data-lang="ta" onclick="setLanguage('ta')">த</button>
+            </div>
+
+            <div class="auth-logo">
+                <span class="logo-icon">🌾</span>
+                <h1>KisanSmart</h1>
+                <p class="tagline" data-i18n="tagline">Smart Farming. Better Harvests. Higher Profits.</p>
+            </div>
+
+            <!-- Toggle between Login / Register -->
+            <div class="auth-toggle">
+                <button id="toggle-login" class="toggle-btn active" onclick="showAuthForm('login')" data-i18n="login">Login</button>
+                <button id="toggle-register" class="toggle-btn" onclick="showAuthForm('register')" data-i18n="register">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form" onsubmit="handleLogin(event)">
+                <div class="input-group">
+                    <label for="login-farmer-id" data-i18n="farmer_id">Farmer ID</label>
+                    <input type="text" id="login-farmer-id" data-i18n-placeholder="enter_farmer_id" placeholder="Enter your Farmer ID" required>
+                </div>
+                <div class="input-group">
+                    <label for="login-mobile" data-i18n="mobile_number">Mobile Number</label>
+                    <input type="tel" id="login-mobile" data-i18n-placeholder="enter_mobile" placeholder="Enter your mobile number" required>
+                </div>
+                <button type="submit" class="btn-primary" id="login-btn">
+                    <span data-i18n="login">Login</span>
+                    <span class="btn-loader hidden"></span>
+                </button>
+                <p class="auth-hint"><span data-i18n="no_account">Don't have an account?</span> <a href="#" onclick="showAuthForm('register')" data-i18n="register_here">Register here</a></p>
+            </form>
+
+            <!-- Register Form -->
+            <form id="register-form" class="auth-form hidden" onsubmit="handleRegister(event)">
+                <div class="input-group">
+                    <label for="reg-farmer-name" data-i18n="farmer_name">Farmer Name</label>
+                    <input type="text" id="reg-farmer-name" data-i18n-placeholder="enter_name" placeholder="Enter your full name" required>
+                </div>
+                <div class="input-group">
+                    <label for="reg-farmer-id" data-i18n="farmer_id">Farmer ID</label>
+                    <input type="text" id="reg-farmer-id" data-i18n-placeholder="choose_farmer_id" placeholder="Choose a unique Farmer ID" required>
+                </div>
+                <div class="input-group">
+                    <label for="reg-mobile" data-i18n="mobile_number">Mobile Number</label>
+                    <input type="tel" id="reg-mobile" data-i18n-placeholder="enter_mobile" placeholder="Enter your mobile number" required>
+                </div>
+                <div class="input-group">
+                    <label for="reg-district" data-i18n="district">District</label>
+                    <input type="text" id="reg-district" data-i18n-placeholder="enter_district" placeholder="Enter your district (e.g. Thiruvannamalai)" required>
+                </div>
+                <button type="submit" class="btn-primary" id="register-btn">
+                    <span data-i18n="register">Register</span>
+                    <span class="btn-loader hidden"></span>
+                </button>
+                <p class="auth-hint"><span data-i18n="have_account">Already have an account?</span> <a href="#" onclick="showAuthForm('login')" data-i18n="login_here">Login here</a></p>
+            </form>
+
+            <div id="auth-error" class="error-msg hidden"></div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- MAIN APP SCREEN (3 Tabs)                                     -->
+    <!-- ============================================================ -->
+    <div id="app-screen" class="screen hidden">
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <span class="logo-icon-sm">🌾</span>
+                <span class="app-name">KisanSmart</span>
+            </div>
+            <div class="top-bar-right">
+                <!-- Language Switcher (in-app) -->
+                <div class="lang-switcher-inline" id="app-lang-switcher">
+                    <button class="lang-btn-sm active" data-lang="en" onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn-sm" data-lang="hi" onclick="setLanguage('hi')">हिं</button>
+                    <button class="lang-btn-sm" data-lang="ta" onclick="setLanguage('ta')">த</button>
+                </div>
+                <span id="welcome-msg" class="welcome-msg">Welcome!</span>
+                <button class="btn-logout" onclick="handleLogout()" data-i18n="logout">Logout</button>
+            </div>
+        </header>
+
+        <!-- Tab Navigation -->
+        <nav class="tab-nav">
+            <button class="tab-btn active" data-tab="home" onclick="switchTab('home')">
+                <span class="tab-icon">🏠</span>
+                <span class="tab-label" data-i18n="home">Home</span>
+            </button>
+            <button class="tab-btn" data-tab="social" onclick="switchTab('social')">
+                <span class="tab-icon">💬</span>
+                <span class="tab-label" data-i18n="community">Community</span>
+            </button>
+            <button class="tab-btn" data-tab="profile" onclick="switchTab('profile')">
+                <span class="tab-icon">👤</span>
+                <span class="tab-label" data-i18n="profile">Profile</span>
+            </button>
+        </nav>
+
+        <!-- Tab Content -->
+        <main class="tab-content">
+
+            <!-- ===================== HOME TAB ===================== -->
+            <section id="tab-home" class="tab-pane active">
+                <h2 class="section-title" data-i18n="smart_predictions">Smart Predictions</h2>
+                <p class="section-subtitle" data-i18n="smart_predictions_desc">Get AI-powered insights for your farming decisions</p>
+
+                <div class="prediction-cards">
+
+                    <!-- Harvest Prediction Card -->
+                    <div class="prediction-card harvest-card">
+                        <div class="card-header">
+                            <span class="card-icon">🌿</span>
+                            <h3 data-i18n="optimal_harvest">Optimal Harvest Window</h3>
+                        </div>
+                        <p class="card-desc" data-i18n="harvest_desc">Find the best days to harvest your crop based on weather predictions</p>
+                        <button class="btn-predict" id="btn-harvest" onclick="predictHarvest()">
+                            <span data-i18n="predict_harvest">Predict Harvest Time</span>
+                            <span class="btn-loader hidden"></span>
+                        </button>
+                        <div id="harvest-result" class="result-area hidden"></div>
+                    </div>
+
+                    <!-- Price Prediction Card -->
+                    <div class="prediction-card price-card">
+                        <div class="card-header">
+                            <span class="card-icon">💰</span>
+                            <h3 data-i18n="market_price">Market Price Prediction</h3>
+                        </div>
+                        <p class="card-desc" data-i18n="price_desc">Find the best mandi market to sell your crop at the highest price</p>
+
+                        <div class="price-form">
+                            <div class="input-group">
+                                <label for="select-district" data-i18n="your_district">Your District</label>
+                                <select id="select-district" onchange="onDistrictChange()">
+                                    <option value="" data-i18n="select_district">Select District</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="select-commodity" data-i18n="commodity">Commodity</label>
+                                <select id="select-commodity">
+                                    <option value="" data-i18n="select_commodity">Select Commodity</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button class="btn-predict" id="btn-price" onclick="predictPrice()">
+                            <span data-i18n="predict_price">Predict Best Price</span>
+                            <span class="btn-loader hidden"></span>
+                        </button>
+                        <div id="price-result" class="result-area hidden"></div>
+                    </div>
+
+                    <!-- Spoilage Prediction Card -->
+                    <div class="prediction-card spoilage-card">
+                        <div class="card-header">
+                            <span class="card-icon">🧪</span>
+                            <h3 data-i18n="spoilage_prediction">Spoilage Risk Prediction</h3>
+                        </div>
+                        <p class="card-desc" data-i18n="spoilage_desc">Estimate how likely your crop is to spoil based on storage conditions</p>
+
+                        <div class="price-form">
+                            <div class="input-group">
+                                <label for="spoil-commodity" data-i18n="commodity">Commodity</label>
+                                <select id="spoil-commodity">
+                                    <option value="" data-i18n="select_commodity">Select Commodity</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="spoil-days" data-i18n="storage_days">Storage Days</label>
+                                <input type="number" id="spoil-days" min="1" max="30" value="3" data-i18n-placeholder="enter_days">
+                            </div>
+                        </div>
+                        <div class="input-group" style="margin-bottom:1.25rem;">
+                            <label for="spoil-humidity" data-i18n="humidity_level">Humidity Level (%)</label>
+                            <div style="display:flex;align-items:center;gap:0.75rem;">
+                                <input type="range" id="spoil-humidity" min="10" max="100" value="70" style="flex:1;accent-color:#ef4444;">
+                                <span id="humidity-display" style="color:#fca5a5;font-weight:600;min-width:40px;">70%</span>
+                            </div>
+                        </div>
+
+                        <button class="btn-predict" id="btn-spoilage" onclick="predictSpoilage()">
+                            <span data-i18n="predict_spoilage">Predict Spoilage Risk</span>
+                            <span class="btn-loader hidden"></span>
+                        </button>
+                        <div id="spoilage-result" class="result-area hidden"></div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ===================== SOCIAL TAB =================== -->
+            <section id="tab-social" class="tab-pane hidden">
+                <h2 class="section-title" data-i18n="farmer_community">Farmer Community</h2>
+                <p class="section-subtitle" data-i18n="community_desc">Share tips, ask questions, and connect with fellow farmers</p>
+
+                <!-- Create Post -->
+                <div class="create-post-card">
+                    <textarea id="post-content" data-i18n-placeholder="share_something" placeholder="Share something with the farming community..." rows="3"></textarea>
+                    <div class="post-actions">
+                        <input type="text" id="post-image-url" data-i18n-placeholder="image_url_optional" placeholder="Image URL (optional)" class="image-url-input">
+                        <button class="btn-post" onclick="createPost()">
+                            <span data-i18n="post">Post</span>
+                            <span class="btn-loader hidden"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Posts Feed -->
+                <div id="posts-feed" class="posts-feed">
+                    <div class="loading-placeholder">
+                        <span class="spinner"></span>
+                        <p data-i18n="loading_posts">Loading posts...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== PROFILE TAB ================== -->
+            <section id="tab-profile" class="tab-pane hidden">
+                <h2 class="section-title" data-i18n="my_profile">My Profile</h2>
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <span>👨‍🌾</span>
+                    </div>
+                    <div class="profile-details">
+                        <div class="profile-field">
+                            <span class="field-label" data-i18n="farmer_name">Farmer Name</span>
+                            <span class="field-value" id="profile-name">—</span>
+                        </div>
+                        <div class="profile-field">
+                            <span class="field-label" data-i18n="farmer_id">Farmer ID</span>
+                            <span class="field-value" id="profile-id">—</span>
+                        </div>
+                        <div class="profile-field">
+                            <span class="field-label" data-i18n="mobile_number">Mobile Number</span>
+                            <span class="field-value" id="profile-mobile">—</span>
+                        </div>
+                        <div class="profile-field">
+                            <span class="field-label" data-i18n="district">District</span>
+                            <span class="field-value" id="profile-district">—</span>
+                        </div>
+                        <div class="profile-field">
+                            <span class="field-label" data-i18n="member_since">Member Since</span>
+                            <span class="field-value" id="profile-created">—</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

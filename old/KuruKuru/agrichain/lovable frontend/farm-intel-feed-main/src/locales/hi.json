@@ -1,0 +1,103 @@
+{
+  "app": {
+    "name": "एग्रीचेन"
+  },
+  "nav": {
+    "home": "होम",
+    "social": "सामाजिक",
+    "profile": "प्रोफ़ाइल"
+  },
+  "dashboard": {
+    "title": "डैशबोर्ड",
+    "subtitle": "आपकी कृषि बुद्धिमत्ता एक नज़र में",
+    "harvest": {
+      "title": "फसल सिफारिश",
+      "match": "{{value}}% मेल",
+      "plant": "बुआई",
+      "harvest": "कटाई",
+      "why": "यह सिफारिश क्यों?",
+      "source": "डेटा स्रोत",
+      "lastUpdated": "अंतिम अपडेट"
+    },
+    "market": {
+      "title": "बाजार मूल्य पूर्वानुमान",
+      "from": "{{value}} से",
+      "why": "यह पूर्वानुमान क्यों?",
+      "source": "डेटा स्रोत",
+      "lastUpdated": "अंतिम अपडेट"
+    },
+    "weather": {
+      "title": "मौसम जोखिम विश्लेषण",
+      "risk": "{{level}} जोखिम",
+      "why": "यह आकलन क्यों?",
+      "source": "डेटा स्रोत",
+      "lastUpdated": "अंतिम अपडेट"
+    },
+    "spoilage": {
+      "title": "खराब होने का जोखिम",
+      "daysRemaining": "{{count}} दिन शेष",
+      "why": "यह जोखिम स्तर क्यों?",
+      "source": "डेटा स्रोत",
+      "lastUpdated": "अंतिम अपडेट"
+    },
+    "marketSuggestion": {
+      "title": "बाजार सुझाव",
+      "demand": "{{level}} मांग",
+      "bestFor": "{{crop}} के लिए सर्वोत्तम",
+      "why": "यह सुझाव क्यों?",
+      "source": "डेटा स्रोत",
+      "lastUpdated": "अंतिम अपडेट"
+    }
+  },
+  "social": {
+    "title": "समुदाय",
+    "subtitle": "साथी किसानों से जुड़ें",
+    "placeholder": "साथी किसानों के साथ कुछ साझा करें…",
+    "imageUrl": "छवि URL पेस्ट करें (वैकल्पिक)",
+    "image": "छवि",
+    "post": "पोस्ट",
+    "follow": "फॉलो करें",
+    "following": "फॉलो कर रहे हैं",
+    "unfollow": "अनफॉलो",
+    "followers": "फॉलोअर्स",
+    "likes": "पसंद",
+    "comments": "टिप्पणियाँ",
+    "share": "साझा करें",
+    "report": "रिपोर्ट",
+    "verified": "सत्यापित",
+    "reportSuccess": "पोस्ट सफलतापूर्वक रिपोर्ट किया गया",
+    "newPost": "नई पोस्ट"
+  },
+  "profile": {
+    "title": "प्रोफ़ाइल",
+    "subtitle": "अपने खेत का विवरण प्रबंधित करें",
+    "farmerProfile": "किसान प्रोफ़ाइल",
+    "name": "किसान का नाम",
+    "bio": "परिचय",
+    "region": "क्षेत्र",
+    "crops": "फसल वरीयता",
+    "cropsHint": "अल्पविराम से अलग सूची",
+    "storage": "भंडारण प्रकार",
+    "save": "प्रोफ़ाइल सहेजें",
+    "saved": "प्रोफ़ाइल सफलतापूर्वक सहेजी गई!",
+    "editProfile": "प्रोफ़ाइल संपादित करें",
+    "posts": "पोस्ट",
+    "about": "परिचय",
+    "network": "नेटवर्क",
+    "followersCount": "फॉलोअर्स",
+    "followingCount": "फॉलो कर रहे हैं",
+    "postsCount": "पोस्ट",
+    "cropSpecialization": "फसल विशेषज्ञता",
+    "storageType": "भंडारण प्रकार",
+    "regionLabel": "क्षेत्र",
+    "noPostsYet": "अभी तक कोई पोस्ट नहीं"
+  },
+  "common": {
+    "loading": "लोड हो रहा है...",
+    "error": "कुछ गलत हो गया",
+    "retry": "पुनः प्रयास करें",
+    "cancel": "रद्द करें",
+    "save": "सहेजें",
+    "edit": "संपादित करें"
+  }
+}

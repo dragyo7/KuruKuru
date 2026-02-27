@@ -1,0 +1,23 @@
+# Large dataset files (exceed GitHub 100MB limit)
+Dataset/TNweather_1.8M\[1\].csv
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment
+Backend/.env
+.env
+
+# Virtual environment
+venv/
+env/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

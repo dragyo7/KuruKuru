@@ -1,0 +1,103 @@
+{
+  "app": {
+    "name": "AgriChain"
+  },
+  "nav": {
+    "home": "Home",
+    "social": "Social",
+    "profile": "Profile"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Your agriculture intelligence at a glance",
+    "harvest": {
+      "title": "Harvest Recommendation",
+      "match": "{{value}}% match",
+      "plant": "Plant",
+      "harvest": "Harvest",
+      "why": "Why this recommendation?",
+      "source": "Data Source",
+      "lastUpdated": "Last updated"
+    },
+    "market": {
+      "title": "Market Price Prediction",
+      "from": "from {{value}}",
+      "why": "Why this prediction?",
+      "source": "Data Source",
+      "lastUpdated": "Last updated"
+    },
+    "weather": {
+      "title": "Weather Risk Analysis",
+      "risk": "{{level}} risk",
+      "why": "Why this assessment?",
+      "source": "Data Source",
+      "lastUpdated": "Last updated"
+    },
+    "spoilage": {
+      "title": "Spoilage Risk",
+      "daysRemaining": "{{count}} days remaining",
+      "why": "Why this risk level?",
+      "source": "Data Source",
+      "lastUpdated": "Last updated"
+    },
+    "marketSuggestion": {
+      "title": "Market Suggestions",
+      "demand": "{{level}} demand",
+      "bestFor": "Best for {{crop}}",
+      "why": "Why this suggestion?",
+      "source": "Data Source",
+      "lastUpdated": "Last updated"
+    }
+  },
+  "social": {
+    "title": "Community",
+    "subtitle": "Connect with fellow farmers",
+    "placeholder": "Share something with fellow farmers…",
+    "imageUrl": "Paste image URL (optional)",
+    "image": "Image",
+    "post": "Post",
+    "follow": "Follow",
+    "following": "Following",
+    "unfollow": "Unfollow",
+    "followers": "Followers",
+    "likes": "Likes",
+    "comments": "Comments",
+    "share": "Share",
+    "report": "Report",
+    "verified": "Verified",
+    "reportSuccess": "Post reported successfully",
+    "newPost": "New Post"
+  },
+  "profile": {
+    "title": "Profile",
+    "subtitle": "Manage your farm details",
+    "farmerProfile": "Farmer Profile",
+    "name": "Farmer Name",
+    "bio": "Bio",
+    "region": "Region",
+    "crops": "Crop Preferences",
+    "cropsHint": "Comma-separated list",
+    "storage": "Storage Type",
+    "save": "Save Profile",
+    "saved": "Profile saved successfully!",
+    "editProfile": "Edit Profile",
+    "posts": "Posts",
+    "about": "About",
+    "network": "Network",
+    "followersCount": "Followers",
+    "followingCount": "Following",
+    "postsCount": "Posts",
+    "cropSpecialization": "Crop Specialization",
+    "storageType": "Storage Type",
+    "regionLabel": "Region",
+    "noPostsYet": "No posts yet"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit"
+  }
+}
